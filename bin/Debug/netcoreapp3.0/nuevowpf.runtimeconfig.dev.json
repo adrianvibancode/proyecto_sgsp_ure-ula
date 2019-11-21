@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\KillerQueen\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\KillerQueen\\.nuget\\packages"
+    ]
+  }
+}
