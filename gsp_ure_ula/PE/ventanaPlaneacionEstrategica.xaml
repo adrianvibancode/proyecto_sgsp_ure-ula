@@ -1,0 +1,99 @@
+﻿<Window x:Class="gsp_ure_ula.PE.ventanaPlaneacionEstrategica"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gsp_ure_ula.PE"
+        mc:Ignorable="d"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     
+        
+        
+        
+        
+        Title="MainWindow" Height="557.459" Width="905.794"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+         TextElement.FontWeight="Regular"
+         TextElement.FontSize="13"
+        TextElement.FontStretch="Expanded"
+         TextOptions.TextFormattingMode="Ideal"
+         TextOptions.TextRenderingMode="Auto"
+         FontFamily="{DynamicResource MaterialDesignFont}"
+        >
+    
+    
+    
+    
+
+    
+
+    <DockPanel>
+        <materialDesign:ColorZone Padding="16" materialDesign:ShadowAssist.ShadowDepth="Depth0" Mode="PrimaryDark" DockPanel.Dock="Top">
+            <DockPanel>
+                <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" IsChecked="False" x:Name="MenuToggleButton"/>
+                <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
+                    <StackPanel>
+                        <Button Content="Hello World" />
+                        <Button Content="Nice Popup" />
+                        <Button Content="Can't Touch This" IsEnabled="False" />
+                        <Separator/>
+                        <Button Content="Goodbye" />
+                    </StackPanel>
+                </materialDesign:PopupBox>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22"> Planeacion Estrategica </TextBlock>
+            </DockPanel>
+        </materialDesign:ColorZone>
+
+
+        <TreeView  DockPanel.Dock="Left">
+
+            <TreeViewItem Header="Base de Datos" >
+                <TreeViewItem Header="Personal"/>
+                <TreeViewItem Header="Unidades"/>
+                <TreeViewItem Header="Pozos"/>
+                <TreeViewItem Header="Registros"/>
+                <TreeViewItem Header="Items"/>
+            </TreeViewItem>
+
+            <TreeViewItem Header="Procedimientos Operativos">
+                <TreeViewItem Header="Procedimientos Operativos"/>
+            </TreeViewItem>
+
+            <TreeViewItem Header="Reportes">
+                <TreeViewItem Header="Diario"/>
+                <TreeViewItem Header="Mensual"/>
+
+            </TreeViewItem>
+
+            <TreeViewItem Header="Seguridad">
+                <TreeViewItem Header="Gerenciamiento de Viaje"/>
+            </TreeViewItem>
+
+        </TreeView>
+
+
+        <Grid DockPanel.Dock="Right">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+
+            <ScrollViewer         Grid.Row="1" 
+                                  DockPanel.Dock="Right" 
+                                  HorizontalScrollBarVisibility="{Binding ElementName=DemoItemsListBox, Path=SelectedItem.HorizontalScrollBarVisibilityRequirement}"
+                                  VerticalScrollBarVisibility="{Binding ElementName=DemoItemsListBox, Path=SelectedItem.VerticalScrollBarVisibilityRequirement}" 
+                                  Padding="{Binding ElementName=DemoItemsListBox, Path=SelectedItem.MarginRequirement}">
+                
+                <ContentControl Content="{Binding SelectedItem.Content, UpdateSourceTrigger=PropertyChanged}" />
+                
+            
+            
+            </ScrollViewer>
+
+            <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}" x:Name="MainSnackbar"
+                                            Grid.Row="1" />
+        </Grid>
+    </DockPanel>
+
+</Window>
